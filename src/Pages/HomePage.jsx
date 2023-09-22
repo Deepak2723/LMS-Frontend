@@ -29,7 +29,7 @@ function HomePage () {
               </div> 
 
               <div className="w-1/2 flex items-center justify-center">
-                <img src="" alt="homepage image" />
+                <img src="https://clipart-library.com/images_k/student-clipart-transparent/student-clipart-transparent-9.png" className="w-1/2" />
 
               </div>
             </div>

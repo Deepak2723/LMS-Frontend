@@ -1,14 +1,14 @@
 import { celebrities } from "../Constants/CelebrityData";
 import HomeLayout from "../Layouts/HomeLayout";
 import CarouselSlide from "../components/CarouselSlide";
+import aboutimage from "../assets/Images/aboutimage.png"
 
       function AboutUs(){
-
        
       return(
           <HomeLayout>
             <div className="pl-20 pt-20 flex flex-col text-white">
-              <div className="flex items-center gap-5 mx-10">
+              <div className="flex items-center justify-center gap-5 mx-10">
                   <section className="w-1/2 space-y-10">
                       <h1 className="text-5xl text-yellow-500 font-semibold">
                         Affordable and quality education
@@ -20,6 +20,7 @@ import CarouselSlide from "../components/CarouselSlide";
                         in the growth and wellness of mankind.  
                       </p>
                   </section>
+
                   <div className="w-1/2">
                     <img 
                     id="test1"
@@ -28,7 +29,7 @@ import CarouselSlide from "../components/CarouselSlide";
                     }}
                     alt="about main image"
                     className="drop-shadow-2xl"
-                    src=" "
+                    src={aboutimage}
                     />
                   </div>
               </div>
@@ -37,9 +38,7 @@ import CarouselSlide from "../components/CarouselSlide";
                                                                   {...celebrity}
                                                                   key= {celebrity.slideNumber}
                                                                   totalSlides={celebrities.length}
-                                                              />))};
-                  
-                     
+                                                              />))};       
              </div>
             </div>
           </HomeLayout>
