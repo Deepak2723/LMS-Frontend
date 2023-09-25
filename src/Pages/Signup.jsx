@@ -47,7 +47,7 @@ function SignUp() {
         }
     }
 
-   async function createNewAccount(){
+   async function createNewAccount(event){
         event.preventDefault();
         if(!signupData.email || !signupData.password || !signupData.fullName || !signupData.avatar) {
             toast.error("Please fill all the required details");
