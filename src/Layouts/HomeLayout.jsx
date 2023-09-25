@@ -83,7 +83,7 @@ return (
                     <button className="btn-primary px-4 py-1 font-semibold rounded-md w-full">
                        <Link to="/login">Login</Link>
                     </button>
-                    <button className="btn-secondary px-4 py-1t font-semibold rounded-md w-full">
+                    <button className="btn-secondary px-4 py-1 font-semibold rounded-md w-full">
                        <Link to="/signup">Signup</Link>
                     </button>
                 </div>

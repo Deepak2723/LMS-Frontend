@@ -70,14 +70,12 @@ const authSlice = createSlice({
             state.data = action?.payload?.user;
             state.role = action?.payload?.role
         })
-        .addCase(login.fulfilled, (state) => {
+        .addCase(logout.fulfilled, (state) => {
             localStorage.clear();
             state.isLoggedIn = false;
             state.role = "";
         })
-        
     }
-    
 });
 
 // export const {} = authSlice.actions;
