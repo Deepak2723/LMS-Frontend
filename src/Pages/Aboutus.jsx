@@ -1,7 +1,7 @@
 import { celebrities } from "../Constants/CelebrityData";
 import HomeLayout from "../Layouts/HomeLayout";
 import CarouselSlide from "../components/CarouselSlide";
-import aboutimage from "../assets/Images/aboutimage.png"
+import aboutMainImage from "../assets/Images/aboutmainImage.png"
 
       function AboutUs(){
        
@@ -21,7 +21,7 @@ import aboutimage from "../assets/Images/aboutimage.png"
                       </p>
                   </section>
 
-                  <div className="w-1/2">
+                  <div className="w-auto">
                     <img 
                     id="test1"
                     style={{
@@ -29,7 +29,7 @@ import aboutimage from "../assets/Images/aboutimage.png"
                     }}
                     alt="about main image"
                     className="drop-shadow-2xl"
-                    src={aboutimage}
+                    src={aboutMainImage}
                     />
                   </div>
               </div>

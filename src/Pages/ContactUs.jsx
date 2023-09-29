@@ -19,7 +19,7 @@ function Contact(){
         })
     }
 
-    function onFormSubmit(e){
+    async function onFormSubmit(e){
          e.preventDefault();
          if(!userInput.email || !userInput.name || !userInput.message){
             toast.error("All fields are required")
@@ -36,11 +36,20 @@ function Contact(){
             const response = axiosInstance.post("/contact", userInput);
             toast.promise(response, {
                 loading: "Submitting your messagre ...",
-                success: "zform submitted successfully",
+                success: "Form submitted successfully",
                 error: "Failed to submit the form"
-            })
+            });
+            const contactResponse = await response;
+            if(contactResponse?.data?.success) {
+                setUserInput({
+                    name: "",
+                    email: "",
+                    message:"",
+                })
+            }
+         
         } catch (err) {
-            
+            toast.error("Operation failed ....")
         }
 
     }
@@ -59,7 +68,8 @@ function Contact(){
                    id= "name"
                    name="name"
                    placeholder="Enter your name" 
-                   onChange={handelInputChange}/>
+                   onChange={handelInputChange}
+                   value={userInput.name}/>
                    
            </div>
            <div className="flex flex-col w-full gap-1">
@@ -69,7 +79,8 @@ function Contact(){
                    id= "email"
                    name="email"
                    placeholder="Enter your Email"
-                   onChange={handelInputChange} />
+                   onChange={handelInputChange} 
+                   value={userInput.email}/>
            </div>
            <div className="flex flex-col w-full gap-1">
               <label htmlFor="message" className="text-xl font-semibold">Message</label>
@@ -78,7 +89,8 @@ function Contact(){
                    id= "message"
                    name="message"
                    placeholder="Write here..."
-                   onChange={handelInputChange} />
+                   onChange={handelInputChange}
+                   value={userInput.message} />
            </div>
            <button  type="submit" className="w-full bg-yellow-600 hover:bg-yellow-400 transition-all ease-in-out duration-300 rounded-sm py-2 font-semibold text-lg cursor-pointer">
                     Submit
