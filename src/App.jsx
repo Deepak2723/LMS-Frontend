@@ -12,7 +12,8 @@ import CourseDescription from './Pages/CourseDescription';
 function App() {
   return (
     <>
-    <Routes> 
+    <Routes>
+
      <Route path="/" element= {<HomePage />}></Route>
      <Route path="/about" element= {<AboutUs />}></Route>
      <Route path="/*" element= {<NotFound />}></Route>
@@ -22,7 +23,7 @@ function App() {
      <Route path="/contact" element= {<Contact />}></Route>
      <Route path="/denied" element= {<Denied />}></Route>
      <Route path="/course/description" element= {<CourseDescription />}></Route>
-
+     <Route element= {<RequireAuth allowedRoles={["ADMIN"]} />}></Route>
 
      </Routes>
     </>
